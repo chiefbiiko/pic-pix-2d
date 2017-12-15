@@ -1,0 +1,32 @@
+{
+  "name": "pic-pix",
+  "version": "0.0.0",
+  "description": "read a bitmap image into a plain old 2d array",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiefbiiko/pic-pix.git"
+  },
+  "keywords": [
+    "image",
+    "processing",
+    "picture",
+    "pixels",
+    "bitmap"
+  ],
+  "author": "Noah Anabiik Schwarz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chiefbiiko/pic-pix/issues"
+  },
+  "homepage": "https://github.com/chiefbiiko/pic-pix#readme",
+  "devDependencies": {
+    "tape": "^4.8.0"
+  },
+  "dependencies": {
+    "get-pixels": "^3.3.0"
+  }
+}
