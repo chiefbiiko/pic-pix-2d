@@ -1,0 +1,14 @@
+{
+  "name": "pix-cluster",
+  "version": "0.0.0",
+  "description": "ckustering neghbor pixels",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "author": "Noah Anabiik Schwarz#",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
+}
