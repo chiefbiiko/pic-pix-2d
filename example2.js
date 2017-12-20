@@ -1,5 +1,5 @@
 var rastafy = require('./index')
-var draw = require('./draw')
+var draw = require('./naiveDraw')
 
 rastafy('./pic.png', { encoding: 'hex' }, function (err, matrix) {
   if (err) return console.error(err)
