@@ -8,9 +8,9 @@ tape('data should be a 2d array', function (t) {
     if (err) t.end(err)
 
     var outer = Array.isArray(matrix)
-    var inner = matrix.every(function (x) { return Array.isArray(x) })
-    var items = matrix.every(function (x) {
-      return x.every(function (item) {
+    var inner = matrix.every(function (y) { return Array.isArray(y) })
+    var items = matrix.every(function (y) {
+      return y.every(function (item) {
         return Object.getPrototypeOf(item) === Object.prototype
       })
     })

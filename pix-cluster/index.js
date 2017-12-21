@@ -25,34 +25,20 @@ function clusterNeighborPixels(matrix) {
         var newCluster = new Set([ { y: i, x: j } ])
         newCluster.color = matrix[i][j]
         supercluster.add(newCluster)
-        console.log(newCluster)
+        // console.log('newcluster', newCluster)
       } else {
-        console.log('supercluster',supercluster)
+        // console.log('supercluster',supercluster)
         for (var oldCluster of supercluster) {
           if (oldCluster.has(similarNeighbor)) {
-            
+            oldCluster.add({ y: i, x: j })
+            // console.log('updated oldcluster', oldCluster)
           }
         }
-        // supercluster.forEach(function (val) {
-        //   if (similarNeighbor && val.has(similarNeighbor)) {
-        //     val.add({ y: i, x: j })
-        //     console.log(val)
-        //   } else {
-        //     var newCluster = new Set([ { y: i, x: j } ])
-        //     newCluster.color = matrix[i][j]
-        //     supercluster.add(newCluster)
-        //     console.log(newCluster)
-        //   }
-        // })
       }
     }
   }
-
-  console.log('similarNeighborsCluster', supercluster)
 
   return supercluster
 }
 
 module.exports = clusterNeighborPixels
-
-clusterNeighborPixels([ [ 1, 2 ], [ 1, 2 ] ])
