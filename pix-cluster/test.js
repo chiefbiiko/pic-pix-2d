@@ -9,9 +9,6 @@ tape('clustering baby steps', function (t) {
 
     var supercluster = pixCluster(rasta)
 
-    console.log('rasta\n', rasta)
-    console.log('supercluster\n', supercluster)
-
     t.ok(Object.getPrototypeOf(supercluster) === Set.prototype,
          'supercluster should be a superset')
 

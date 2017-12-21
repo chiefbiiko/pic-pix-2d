@@ -1,7 +1,12 @@
-var clusterNeighborPixels = require('./index')
+var rastafy = require('./../index')
+var pixCluster = require('./index')
 
-var matrix = [ [ 1, 2 ], [ 1, 2 ] ]
-var supercluster = clusterNeighborPixels(matrix)
+rastafy('./../pic.png', function (err, rasta) {
+  if (err) return console.error(err)
 
-// somethings wrong here!!
-console.log('supercluster', supercluster)
+  var supercluster = pixCluster(rasta)
+
+  console.log('rasta', rasta)
+  console.log('supercluster', supercluster)
+
+})
