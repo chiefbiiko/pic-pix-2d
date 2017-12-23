@@ -4,44 +4,33 @@ function sim (pixelA, pixelB) { // for now similarity is simply strict
 
 function tandemify (arr) {
   return arr.reduce(function (acc, item, j, arr) {
-    if (item !== arr[j - 1]) acc.push([ { color: item, cluster: null } ])
-    else acc[acc.length - 1].push({ color: item, cluster: null })
+    if (item !== arr[j - 1]) acc.push([ item ])
+    else acc[acc.length - 1].push(item)
     return acc
   }, [])
 }
 
 function clusterNeighborPixels (matrix) {
-  var supercluster = {}
+  var supercluster = new Set()
   var h = matrix.length, w = matrix[0].length
   var prev = [] // init like this [ { color: null, super: null } , ...n ]  
-//var bridgecluster = []
-
-  var row = Array(), processed = false
+  var bridgecluster = []
 
   for (var i = 0; i < h; i++) {
-    row = tandemify(matrix[i])
-    console.log('row' + i + '\n', row)
+    var localcluster = tandemify(matrix[i])
+    console.log('localcluster' + i + '\n', localcluster)
 
     // compare localcluster against prev
     // actuly each item of prev should hold a pixel value and
     // point to the respective cluster in supercluster
     // so we either assign to that or make a new cluster
-    var j = 0
-    for (var tandem of row) { // comparing pixel by pixel
-      assigned = false
-      for (var pixel of tandem) {
-        if (!assigned && pixel.color === prev[j].color) {
-	  assigned = true
-	  pixel.cluster = prev[j].cluster
-	  // WRITE TO SUPERCLUSTER!!!
-	}
-	j++
-      }
+    for (var j = 0; j < w; j++) { // comparing pixel by pixel
+
     }
 
     // make sure bridgecluster looks like:
     // [ { color: item, super: index } ]
-    prev = row // FLATTEN THE ROW!!!!
+    prev = bridgecluster
   }
 
 }
